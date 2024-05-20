@@ -5,6 +5,13 @@ class Cat extends Animal {
         super(name, age, favoriteFood)
         this.breed = breed
     }
+
+    getCatBreed() {
+        if (this instanceof Cat) {
+            console.log(this.breed)
+        }
+    }
+
     static getFavoriteFood(...animals) {
         let filtered = animals.filter((animal) => animal instanceof Cat)
         filtered.forEach((animal) => console.log(animal.favoriteFood))
@@ -14,6 +21,7 @@ class Cat extends Animal {
 const cat1 = new Cat('Rodger', 3, 'tuna', 'Mancoon')
 const cat2 = new Cat('Aaron', 3, 'salmon', 'Tabby')
 
+cat1.getCatBreed()
 
 module.exports = {
     Cat,
