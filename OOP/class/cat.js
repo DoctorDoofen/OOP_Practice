@@ -18,10 +18,11 @@ class Cat extends Animal {
     }
 }
 
-const cat1 = new Cat('Rodger', 3, 'tuna', 'Mancoon')
+const cat1 = new Cat('Rodger', 3, 'tuna')
 const cat2 = new Cat('Aaron', 3, 'salmon', 'Tabby')
 
-cat1.getCatBreed()
+
+
 
 module.exports = {
     Cat,

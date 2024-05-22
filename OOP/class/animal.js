@@ -7,6 +7,13 @@ class Animal {
         this.favoriteFood = favoriteFood
     }
 
+    isValid() {
+        if (!this.name || !this.age || !this.favoriteFood) {
+            return false
+        }
+        return true
+    }
+
     getAnimalName() {
         if (this instanceof Animal) {
             console.log(this.name)
@@ -14,8 +21,10 @@ class Animal {
     }
 
     static getFavoriteFood(...animals) {
-
-        animals.forEach((animal) => console.log(animal.favoriteFood))
+        let favoriteFoods = []
+        let filtered = animals.filter((animal) => animal instanceof Animal)
+        filtered.forEach((animal) => favoriteFoods.push(animal.favoriteFood))
+        return favoriteFoods;
     }
 
 }
@@ -24,7 +33,7 @@ const penguin1 = new Animal('Rodger', 3, 'Fish')
 const penguin2 = new Animal('Alex', 3, 'seal')
 
 
-// penguin1.getAnimalName()
+
 
 module.exports = {
     Animal,

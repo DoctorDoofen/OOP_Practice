@@ -8,7 +8,7 @@ class Dog extends Animal {
 
     getDogAge() {
         if (this instanceof Dog) {
-            console.log(this.age)
+            return this.age
         }
     }
 
@@ -19,10 +19,11 @@ class Dog extends Animal {
 
 }
 
-const Dog1 = new Animal('Rodger', 3, 'Fish')
-const Dog2 = new Animal('Aaron', 3, 'bones')
+const Dog1 = new Dog('Rodger', 3, 'Fish', 'mutt')
+const Dog2 = new Dog('Aaron', 3, 'bones')
 
-Dog1.getDogAge()
+
+
 module.exports = {
     Dog,
     Dog1,
